@@ -2,7 +2,7 @@
 
 Preliminary notes for article on connecting to MySQL with PHP through an HTML front end.
 
-Lessons to learn:
+## Lessons
 
 ### How to create a database table with structure (create.php)
 
