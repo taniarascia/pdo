@@ -22,7 +22,7 @@ function downloadCSV($location) {
 	$result = $connection->query($statement);
 
 	// Open file stream for writing, and create if not exists
-	$file_pointer = fopen('query.csv', 'w');
+	$file_pointer = fopen('result.csv', 'w');
 
 	// Make an array with the headers
 	$headers = array(
@@ -48,8 +48,8 @@ function downloadCSV($location) {
 	
 	// Output headers so that the file is downloaded rather than displayed
 	header("Content-type: text/csv");
-	header("Content-disposition: attachment; filename = query.csv");
-	readfile("query.csv");
+	header("Content-disposition: attachment; filename = result.csv");
+	readfile("result.csv");
 
 	// Close the database connection
 	$connection->close();

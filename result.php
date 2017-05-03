@@ -15,16 +15,12 @@
 
 	<div class="container pt-5">
 		<div class="page-header text-center">
-			<h1>Query database</h1>
+			<h1>Result</h1>
 		</div>
 
-		<div class="row">
-			<div class="offset-md-3 col-md-6">
-				<form action="result.php" method="post">
-					<label for="location">Location</label>
-					<input type="text" id="location" name="location" class="form-control required">
-					<input class="btn btn-lg btn-primary mt-2" type="submit" value="View Results">
-				</form>
+		<div class="row pt-5">
+			<div class="col-md-12">
+				<?php include 'show-table.php'; ?>
 			</div>
 		</div>
 	</div>

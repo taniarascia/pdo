@@ -12,6 +12,10 @@ Create a table named "users" that gathers first name, last name, email address, 
 
 Use an online form to add a new user.
 
+### How to display a table of database results (query.html, show-table.php)
+
+Search by location and print a table of database results
+
 ### How to request a CSV download of database based on queries (query.html, export-csv.php)
 
 Search by location and export a CSV with headers and the matched users.
