@@ -1,8 +1,8 @@
 <?php
-
 /**
-Function to queried information from the database and display in a table.
-*/
+ * Function to query information and display table
+ *
+ */
 
 // return rows by the date selected
 function returnRows($location) {
