@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Submit</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+</head>
+
+<body>
+
+	<div class="container pt-5">
+		<div class="page-header text-center">
+			<h1>Add a user</h1>
+		</div>
+
+		<div class="row">
+			<div class="offset-md-3 col-md-6">
+				<form action="pdo.update.php" method="post">
+					<label for="firstname">First Name</label>
+					<input type="text" name="firstname" id="firstname" class="form-control required">
+					<label for="lastname">Last Name</label>
+					<input type="text" name="lastname" id="lastname" class="form-control required">
+					<label for="email">Email Address</label>
+					<input type="text" name="email" id="email" class="form-control">
+					<label for="age">Age</label>
+					<input type="text" name="age" id="age" class="form-control">
+					<label for="location">Location</label>
+					<input type="text" name="location" id="location" class="form-control">
+					<input class="btn btn-lg btn-primary mt-2" type="submit" value="Submit">
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
