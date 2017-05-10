@@ -1,31 +1,25 @@
 <?php
 
 /**
- * Install database
+ * Open a connection via PDO to create a
+ * new database and table with structure.
  *
  */
 
-include "pdo.config.php";
+require_once "config.php";
 
-try {
-	// Open PDO connection
-	$connection = new PDO("mysql:host=$host;dbname=$dbname;charset=$charset", $username, $password,
-		array(
-			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-			PDO::ATTR_PERSISTENT => false,
-			PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-			PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES $charset COLLATE $collate"
-		)
-	);
-		
-    $sql = "CREATE DATABASE myDBPDO";
-    // use exec() because no results are returned
-    $connection->exec($sql);
-    echo "Database created successfully<br>";
-    }
-catch(PDOException $e)
-    {
-    echo $sql . "<br>" . $e->getMessage();
-    }
+try 
+{
+	$connection = new PDO("mysql:host=$host", $username, $password, $options);
+	$sql = file_get_contents("data/create.sql");
+	$connection->exec($sql);
+	
+	echo "Database and table users created successfully.";
+}
 
-$connection = null;
+catch(PDOException $error)
+{
+	echo $sql . "<br>" . $error->getMessage();
+}
+
+$connection->null;
