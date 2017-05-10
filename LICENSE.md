@@ -1,21 +1,9 @@
-# PHP and MySQL
+The MIT License (MIT)
 
-Preliminary notes for article on connecting to MySQL with PHP through an HTML front end.
+Copyright (c) 2017 Tania Rascia
 
-## Lessons
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-### How to create a database table with structure (create.php)
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-Create a table named "users" that gathers first name, last name, email address, location, age, and date.
-
-### How to add an entry to the database via online form (submit.html and update.php)
-
-Use an online form to add a new user.
-
-### How to display a table of database results (query.html, show-table.php)
-
-Search by location and print a table of database results
-
-### How to request a CSV download of database based on queries (query.html, export-csv.php)
-
-Search by location and export a CSV with headers and the matched users.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
