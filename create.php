@@ -54,7 +54,12 @@ if ($_POST)
 <body>
 
 	<div class="small-container">
-		<h1>Add a user</h1>
+	
+		<h1>Simple database</h1>
+	
+		<?php if ($statement) { ?><blockquote><?php echo escape($_POST['firstname']); ?> added successfully.</blockquote><?php } ?>
+	
+		<h2>Add a user</h2>
 
 		<form method="post">
 			<label for="firstname">First Name</label>
@@ -69,7 +74,10 @@ if ($_POST)
 			<input type="text" name="location" id="location">
 			<input type="submit" value="Submit">
 		</form>
+		
+		<div class="text-right"><a class="button muted-button" href="index.php">Back to home</a></div>
 	</div>
+	
 
 </body>
 

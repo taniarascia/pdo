@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Escapes HTML
+ * Escapes HTML for output
  *
  */
 
