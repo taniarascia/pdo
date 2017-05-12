@@ -46,41 +46,49 @@ if ($_POST)
 		<h1>Simple database</h1>
 		
 		<?php 
-		if ($result && $statement->rowCount() > 0) 
-		{ ?>
-		<h2>Results</h2>
-		
-		<table class="table table-striped">
-			<thead>
-				<tr>
-					<th>#</th>
-					<th>First Name</th>
-					<th>Last Name</th>
-					<th>Email Address</th>
-					<th>Age</th>
-					<th>Location</th>
-					<th>Date</th>
-				</tr>
-			</thead>
-			<tbody>
-		<?php 
-		foreach ($result as $row) 
-		{ ?>
-				<tr>
-					<td><?php echo $row["id"]; ?></td>
-					<td><?php echo $row["firstname"]; ?></td>
-					<td><?php echo $row["lastname"]; ?></td>
-					<td><?php echo $row["email"]; ?></td>
-					<td><?php echo $row["age"]; ?></td>
-					<td><?php echo $row["location"]; ?></td>
-					<td><?php echo $row["date"]; ?> </td>
-				</tr>
-		<?php 
-		} ?>
-			</tbody>
-		</table>
-		<?php 
-		} ?> 
+		if ($_POST) 
+		{
+			if ($result && $statement->rowCount() > 0) 
+			{ ?>
+				<h2>Results</h2>
+
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Email Address</th>
+							<th>Age</th>
+							<th>Location</th>
+							<th>Date</th>
+						</tr>
+					</thead>
+					<tbody>
+			<?php 
+				foreach ($result as $row) 
+				{ ?>
+					<tr>
+						<td><?php echo $row["id"]; ?></td>
+						<td><?php echo $row["firstname"]; ?></td>
+						<td><?php echo $row["lastname"]; ?></td>
+						<td><?php echo $row["email"]; ?></td>
+						<td><?php echo $row["age"]; ?></td>
+						<td><?php echo $row["location"]; ?></td>
+						<td><?php echo $row["date"]; ?> </td>
+					</tr>
+				<?php 
+				} ?>
+				</tbody>
+			</table>
+			<?php 
+			} 
+			else 
+			{ ?>
+				<blockquote>No results found for <?php echo escape($_POST['location']); ?>.</blockquote>
+			<?php
+			} 
+		}?> 
 		
 		<h2>Find user based on location</h2>
 		
