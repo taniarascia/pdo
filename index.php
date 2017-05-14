@@ -1,28 +1,8 @@
-<!doctype html>
-<html lang="en">
+<?php include "templates/header.php"; ?>
 
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+<ul>
+	<li><a href="create.php"><strong>Create</strong></a> - add a user</li>
+	<li><a href="read.php"><strong>Read</strong></a> - find a user</li>
+</ul>
 
-	<title>Simple database</title>
-
-	<link rel="stylesheet" href="css/primitive.css">
-
-</head>
-
-<body>
-
-	<div class="small-container">
-
-		<h1>Simple database</h1>
-
-		<a class="button" href="create.php">Add a user</a>
-		<a class="button" href="read.php">Find a user</a>
-
-	</div>
-
-</body>
-
-</html>
+<?php include "templates/footer.php"; ?>
