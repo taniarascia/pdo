@@ -6,7 +6,7 @@
  *
  */
 
-require_once "config.php";
+require "config.php";
 
 try 
 {
@@ -21,5 +21,3 @@ catch(PDOException $error)
 {
 	echo $sql . "<br>" . $error->getMessage();
 }
-
-$connection->null;
