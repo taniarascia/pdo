@@ -17,7 +17,7 @@ if (isset($_POST['submit']))
 	{
 		$connection = new PDO($dsn, $username, $password, $options);
 		
-		$parameters = array(
+		$new_user = array(
 			"firstname" => $_POST['firstname'],
 			"lastname"  => $_POST['lastname'],
 			"email"     => $_POST['email'],
@@ -28,12 +28,12 @@ if (isset($_POST['submit']))
 		$sql = sprintf(
 				"INSERT INTO %s (%s) values (%s)",
 				"users",
-				implode(", ", array_keys($parameters)),
-				":" . implode(", :", array_keys($parameters))
+				implode(", ", array_keys($new_user)),
+				":" . implode(", :", array_keys($new_user))
 		);
 		
 		$statement = $connection->prepare($sql);
-		$statement->execute($parameters);
+		$statement->execute($new_user);
 	}
 
 	catch(PDOException $error) 
