@@ -8,23 +8,30 @@
 
 if (isset($_POST['submit'])) 
 {
+	try 
+	{
+		require "../config.php";
+		require "../common.php";
 
-	require "../config.php";
-	require "../common.php";
+		$connection = new PDO($dsn, $username, $password, $options);
 
-	$connection = new PDO($dsn, $username, $password, $options);
+		$sql = "SELECT * 
+						FROM users
+						WHERE location = :location";
 
-	$sql = "SELECT * 
-          FROM users
-          WHERE location = :location";
+		$location = $_POST['location'];
+
+		$statement = $connection->prepare($sql);
+		$statement->bindParam(':location', $location, PDO::PARAM_STR);
+		$statement->execute();
+
+		$result = $statement->fetchAll();
+	}
 	
-	$location = $_POST['location'];
-
-	$statement = $connection->prepare($sql);
-	$statement->bindParam(':location', $location, PDO::PARAM_STR);
-	$statement->execute();
-
-	$result = $statement->fetchAll();
+	catch(PDOException $error) 
+	{
+		echo $sql . "<br>" . $error->getMessage();
+	}
 }
 ?>
 <?php require "templates/header.php"; ?>
