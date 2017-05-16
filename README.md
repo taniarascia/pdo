@@ -1,9 +1,15 @@
 # Connecting to MySQL in PHP using PDO
 
-Preliminary notes for article on connecting to MySQL with PHP through an HTML front end.
+Create a Simple Database App: Connecting to MySQL with PHP
+
+### [View the tutorial](https://www.taniarascia.com/create-a-simple-database-app-connecting-to-mysql-with-php/)
 
 ## Lessons
 
 - Install database and create table
 - Submit users
-- Search for users
+- Query and filter users
+
+## License
+
+The code is open source and available under the [MIT License](LICENSE.md).
