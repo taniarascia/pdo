@@ -8,8 +8,10 @@
 
 if (isset($_POST['submit'])) 
 {
+	
 	try 
 	{
+		
 		require "../config.php";
 		require "../common.php";
 
