@@ -34,7 +34,6 @@ if (isset($_POST['submit'])) {
     } catch(PDOException $error) {
         echo $sql . "<br>" . $error->getMessage();
     }
-    
 }
 ?>
 
