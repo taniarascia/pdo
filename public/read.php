@@ -6,11 +6,8 @@
  *
  */
 
-if (isset($_POST['submit'])) 
-{
-	
-	try 
-	{
+if (isset($_POST['submit'])) {
+	try  {
 		
 		require "../config.php";
 		require "../common.php";
@@ -28,10 +25,7 @@ if (isset($_POST['submit']))
 		$statement->execute();
 
 		$result = $statement->fetchAll();
-	}
-	
-	catch(PDOException $error) 
-	{
+	} catch(PDOException $error) {
 		echo $sql . "<br>" . $error->getMessage();
 	}
 }
@@ -39,10 +33,8 @@ if (isset($_POST['submit']))
 <?php require "templates/header.php"; ?>
 		
 <?php  
-if (isset($_POST['submit'])) 
-{
-	if ($result && $statement->rowCount() > 0) 
-	{ ?>
+if (isset($_POST['submit'])) {
+	if ($result && $statement->rowCount() > 0) { ?>
 		<h2>Results</h2>
 
 		<table>
@@ -58,9 +50,7 @@ if (isset($_POST['submit']))
 				</tr>
 			</thead>
 			<tbody>
-	<?php 
-		foreach ($result as $row) 
-		{ ?>
+		<?php foreach ($result as $row) { ?>
 			<tr>
 				<td><?php echo escape($row["id"]); ?></td>
 				<td><?php echo escape($row["firstname"]); ?></td>
@@ -70,18 +60,13 @@ if (isset($_POST['submit']))
 				<td><?php echo escape($row["location"]); ?></td>
 				<td><?php echo escape($row["date"]); ?> </td>
 			</tr>
-		<?php 
-		} ?>
+		<?php } ?>
 		</tbody>
 	</table>
-	<?php 
-	} 
-	else 
-	{ ?>
+	<?php } else { ?>
 		<blockquote>No results found for <?php echo escape($_POST['location']); ?>.</blockquote>
-	<?php
-	} 
-}?> 
+	<?php } 
+} ?> 
 
 <h2>Find user based on location</h2>
 
