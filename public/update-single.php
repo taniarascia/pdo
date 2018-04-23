@@ -13,16 +13,28 @@ if (isset($_POST['submit'])) {
   try {
     $connection = new PDO($dsn, $username, $password, $options);
 
-  $items = [];
-  foreach($_POST as $key => $value) {
-    if ($key == 'submit') continue; // ignore submit in $_POST
-    $items[] = "$key = :$key";
-  }
-  $items = implode(", ", $items);
-  $sql = sprintf('UPDATE %s SET %s WHERE id = :id', 'users', $items);
+    $user =[
+      "id"        => $_POST['id'],
+      "firstname" => $_POST['firstname'],
+      "lastname"  => $_POST['lastname'],
+      "email"     => $_POST['email'],
+      "age"       => $_POST['age'],
+      "location"  => $_POST['location'],
+      "date"      => $_POST['date']
+    ];
+
+    $sql = "UPDATE users 
+            SET id = :id, 
+              firstname = :firstname, 
+              lastname = :lastname, 
+              email = :email, 
+              age = :age, 
+              location = :location, 
+              date = :date 
+            WHERE id = :id";
   
   $statement = $connection->prepare($sql);
-  $statement->execute($_POST);
+  $statement->execute($user);
   } catch(PDOException $error) {
       echo $sql . "<br>" . $error->getMessage();
   }
@@ -39,8 +51,8 @@ if (isset($_GET['id'])) {
     $statement->execute();
     
     $user = $statement->fetch(PDO::FETCH_ASSOC);
-	} catch(PDOException $error) {
-		echo $sql . "<br>" . $error->getMessage();
+  } catch(PDOException $error) {
+      echo $sql . "<br>" . $error->getMessage();
   }
 } else {
     echo "Something went wrong!";
@@ -51,7 +63,7 @@ if (isset($_GET['id'])) {
 <?php require "templates/header.php"; ?>
 
 <?php if (isset($_POST['submit']) && $statement) : ?>
-	<blockquote><?php echo $_POST['firstname']; ?> successfully updated.</blockquote>
+	<blockquote><?php echo escape($_POST['firstname']); ?> successfully updated.</blockquote>
 <?php endif; ?>
 
 <h2>Edit a user</h2>
