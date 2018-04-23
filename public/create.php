@@ -40,7 +40,7 @@ if (isset($_POST['submit'])) {
 <?php require "templates/header.php"; ?>
 
   <?php if (isset($_POST['submit']) && $statement) : ?>
-    <blockquote><?php echo $_POST['firstname']; ?> successfully added.</blockquote>
+    <blockquote><?php echo escape($_POST['firstname']); ?> successfully added.</blockquote>
   <?php endif; ?>
 
   <h2>Add a user</h2>
