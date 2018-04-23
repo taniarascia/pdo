@@ -6,9 +6,11 @@ Create a Simple Database App: Connecting to MySQL with PHP
 
 ## Lessons
 
-- Install database and create table
-- Submit users
+- Install database and create table structure
+- Submit new users
 - Query and filter users
+- Update users with new data
+- Delete users
 
 ## License
 
