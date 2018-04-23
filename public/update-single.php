@@ -71,7 +71,7 @@ if (isset($_GET['id'])) {
 <form method="post">
     <?php foreach ($user as $key => $value) : ?>
       <label for="<?php echo $key; ?>"><?php echo ucfirst($key); ?></label>
-	    <input type="text" name="<?php echo $key; ?>" id="<?php echo $key; ?>" value="<?php echo $value; ?>" <?php echo ($key === 'id' ? 'readonly' : null); ?>>
+	    <input type="text" name="<?php echo $key; ?>" id="<?php echo $key; ?>" value="<?php echo escape($value); ?>" <?php echo ($key === 'id' ? 'readonly' : null); ?>>
     <?php endforeach; ?> 
     <input type="submit" name="submit" value="Submit">
 </form>
