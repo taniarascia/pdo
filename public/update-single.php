@@ -10,6 +10,8 @@ require "../config.php";
 require "../common.php";
 
 if (isset($_POST['submit'])) {
+  if (!hash_equals($_SESSION['csrf'], $_POST['csrf'])) die();
+
   try {
     $connection = new PDO($dsn, $username, $password, $options);
 
@@ -69,6 +71,7 @@ if (isset($_GET['id'])) {
 <h2>Edit a user</h2>
 
 <form method="post">
+    <input name="csrf" type="hidden" value="<?php echo escape($_SESSION['csrf']); ?>">
     <?php foreach ($user as $key => $value) : ?>
       <label for="<?php echo $key; ?>"><?php echo ucfirst($key); ?></label>
 	    <input type="text" name="<?php echo $key; ?>" id="<?php echo $key; ?>" value="<?php echo escape($value); ?>" <?php echo ($key === 'id' ? 'readonly' : null); ?>>
