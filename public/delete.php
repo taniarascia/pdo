@@ -4,7 +4,7 @@
  * Delete a user
  */
 
-require "../context.php";
+require "../config.php";
 require "../common.php";
 
 $success = null;

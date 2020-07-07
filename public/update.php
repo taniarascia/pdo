@@ -4,7 +4,7 @@
  * List all users with a link to edit
  */
 
-require "../context.php";
+require "../config.php";
 require "../common.php";
 
 try {
